@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href=".\\static\\css\\mystyle.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="outer_div">
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/eng">English to Kashmiri</a></li>
+                <li><a class="active" href="#">Kashmiri to English</a></li>
+              </ul>
+              <div class="inner_div">
+                <div style="padding:10px;border:1px solid slateblue;">
+                    
+                    <h2>Please type input sentence below:</h2>
+                    
+                    <div>
+                        
+                    </div>
+                    <div style="padding:20px;">
+                        
+                        <label for="input-text">Input Text:</label><input type="text" name="input" id="input" >
+                        <button id="button" type="Submit"  class="btn" >Translate it</button>
+                        
+                        <br><br>
+                        <label id="translation">Translation:</label>
+                        <br>
+                        <textarea spellcheck="false"  readonly="" disabled="" class="to-text" id="translate" placeholder="">Translation comes here...</textarea>
+                        
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+  $('#button').click(function() {
+    var input = $('#input').val();
+    
+    $.ajax({
+      url: '/kash',
+      method: 'POST',
+      data : {'result' : input},
+        success: function(response) {
+            $('#translate').text(response.result);
+        }
+    });
+  });
+});
+        </script>
+        <script>
+
+        </script>
+    </body>
+</html>

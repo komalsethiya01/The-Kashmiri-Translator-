@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href=".\static\css\mystyle.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="outer_div">
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a class="active" href="#">English to Kashmiri</a></li>
+                <li><a href="/kash">Kashmiri to English</a></li>
+              </ul>
+              <div class="inner_div">
+                <div style="padding:10px;border:1px solid slateblue;">
+                    
+                    <h2>Please speak input sentence after clicking start:</h2>
+                    <h3>Transcript:</h3>
+                    <div>
+                        <!--class="p-3" spellcheck="false" readonly="" disabled="" class="to-text" id="demo"  style="border: 1px solid gray; height: 300px; border-radius: 8px; width: 600px;"-->
+                        <div spellcheck="false" readonly="" disabled="" class="to-text" id="demo"  style="border: 1px solid slateblue;height:50px;width:70%;">
+                            <span id="final"></span>
+                            <span id="interim"></span>
+                        </div>
+                    </div>
+                    <div style="padding:20px;">
+                        <button class="btn" id="start">Start</button>
+                        <button class="btn" id="stop">Stop</button><br>
+                        <p id="status" class="lead mt-3" style="display: none">Listening...</p><br>
+                        <button id="demos" class="btn" >Translate it</button>
+                        <br><br>
+                        <label id="translation">Translation:</label>
+                        <br>
+                        <textarea spellcheck="false"  readonly="" disabled="" class="to-text" id="translate" placeholder="">Translation comes here...</textarea>
+                        
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+        <script src=".\\static\\js\\speechjs.js"></script>
+        <!--<script>
+            function display(){
+                var textBox = document.getElementById("translate");
+            textBox.style.display = "block";
+                //document.getElementById("translate").innerHTML = "Translated text: {{ english_out }} ";
+            }
+        </script>-->
+    </body>
+</html>
